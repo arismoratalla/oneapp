@@ -12,10 +12,8 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
             </h1>
 
             <p class="mt-6 text-gray-500 leading-relaxed">
-                Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-                to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-                you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-                ecosystem to be a breath of fresh air. We hope you love it.
+                DOST-IX ONEAPP is the one-stop application designed to cater to the daily needs of DOST-IX personnel, 
+                whether you're checking incoming documents, filing financial requests, applying for a leave, or managing any other task.
             </p>
         </div>
 
