@@ -91,7 +91,7 @@ const logout = () => {
                                                 Home
                                             </DropdownLink>
 
-                                            <DropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('teams.create')">
+                                            <DropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('hr.index')">
                                                 Human Resources
                                             </DropdownLink>
 
