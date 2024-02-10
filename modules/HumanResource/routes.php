@@ -2,4 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('hr-test', fn () => 'Hello from HR!!');
+Route::prefix('hr')->group(function () {
+    Route::get('/', [Modules\HumanResource\Http\Controllers\HumanResourceController::class, 'index'])->name('hr.index');
+});
