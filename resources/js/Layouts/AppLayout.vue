@@ -87,19 +87,19 @@ const logout = () => {
                                             </div>
 
                                             <!-- Team Settings -->
-                                            <DropdownLink :href="route('teams.create', $page.props.auth.user.current_team)">
+                                            <DropdownLink :href="route('dashboard')">
                                                 Home
                                             </DropdownLink>
 
-                                            <DropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('hr.index')">
+                                            <DropdownLink :href="route('hr.index')">
                                                 Human Resources
                                             </DropdownLink>
 
-                                            <DropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('teams.create')">
+                                            <DropdownLink :href="route('teams.create')">
                                                 Finance
                                             </DropdownLink>
 
-                                            <DropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('teams.create')">
+                                            <DropdownLink :href="route('teams.create')">
                                                 Procurement
                                             </DropdownLink>
                                         </div>
@@ -328,7 +328,7 @@ const logout = () => {
 
             <!-- Page Heading -->
             <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-4 px-2 sm:px-2 lg:-px-8">
                     <slot name="header" />
                 </div>
             </header>
