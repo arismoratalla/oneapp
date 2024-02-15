@@ -4,12 +4,12 @@ import Welcome from '@/Components/Welcome.vue';
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
-        <template #header>
+    <!-- <AppLayout title="Dashboard"> -->
+        <!-- <template #header>
             <h2 class="-mx-40 font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
             </h2>
-        </template>
+        </template> -->
 
         <div class="py-8">
             <div class="max-w-full mx-auto sm:px-6 lg:px-8">
@@ -18,5 +18,5 @@ import Welcome from '@/Components/Welcome.vue';
                 </div>
             </div>
         </div>
-    </AppLayout>
+    <!-- </AppLayout> -->
 </template>
