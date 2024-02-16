@@ -1,3 +1,30 @@
+<script setup>
+import { ref } from 'vue';
+import MenuLink from '@/Components/MenuLink.vue';
+
+// const props = defineProps({
+//   activeMenu: {
+//     type: String,
+//     default: ''
+//   },
+//   active_menu: {
+//     type: String,
+//     default: ''
+//   },
+// });
+const activeMenu = ref()
+
+const setActiveMenu = (menu) => {
+   console.log('Set menu:', menu)
+   activeMenu.value = menu;
+};
+
+const checkActiveMenu = (menu) => {
+   console.log('Check menu:', menu)
+   return activeMenu.value === menu ? 'py-2 space-y-2' : 'hidden';
+};
+</script>
+
 <template>
 
 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -19,7 +46,7 @@
             </a>
          </li>
          <li>
-            <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+            <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-attendance" data-collapse-toggle="dropdown-attendance">
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M5 5c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1h1c.6 0 1-.4 1-1a1 1 0 1 1 2 0c0 .6.4 1 1 1a2 2 0 0 1 2 2v1c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V7c0-1.1.9-2 2-2ZM3 19v-7c0-.6.4-1 1-1h16c.6 0 1 .4 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6-6c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1ZM7 17a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Zm6 0c0-.6-.4-1-1-1a1 1 0 1 0 0 2c.6 0 1-.4 1-1Zm2 0a1 1 0 1 1 2 0c0 .6-.4 1-1 1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
                 </svg>
@@ -28,21 +55,21 @@
                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                   </svg>
             </button>
-            <ul id="dropdown-example" class="hidden py-2 space-y-2">
+            <ul id="dropdown-attendance" class="py-2 space-y-2">
                   <li>
-                     <a href="/hr" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                     <MenuLink :href="route('hr.index')" :active="$page.component === 'HumanResource/Pages/Index'" @click="setActiveMenu('dropdown-attendance-dashboard')">
                         Dashboard
-                    </a>
+                     </MenuLink>
                   </li>
                   <li>
-                     <a href="/hr/leave" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                        Leave Management
-                    </a>
+                     <MenuLink :href="route('leave.index')" :active="$page.component === 'HumanResource/Pages/Leave/Index'" @click="setActiveMenu('dropdown-attendance')">
+                        Leave Management 
+                     </MenuLink>
                   </li>
                   <li>
-                     <a href="hr/report" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                     <MenuLink :href="route('leave.index')" :active="$page.component === 'HumanResource/Pages/Report/Index'">
                         Reports
-                    </a>
+                     </MenuLink>
                   </li>
             </ul>
          </li>
